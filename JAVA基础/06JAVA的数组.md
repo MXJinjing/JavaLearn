@@ -155,6 +155,8 @@ public class ArrayDemo2 {
 
 遍历：一个个数据的访问
 
+ages.fori 快速生成
+
 ```java
 package com.itheima.define;
 
@@ -273,3 +275,102 @@ public class ArrayDemo2 {
 如果存储地址是NULL，不包含任何对象
 
 访问会空指针异常
+
+## 数组求最值
+
+最大值
+
+```java
+package com.itheima.demo;
+
+public class Test1 {
+    public static void main(String[] args) {
+        int[] faceScores = {15,9000,1000,0,20000,9500,-5};
+
+        //求最大值
+        int max = faceScores[0];
+
+        for (int i =0 ; i < faceScores.length ; i++){
+            if (faceScores[i] > max){
+                max = faceScores[i];
+            }
+        }
+        System.out.println("最高颜值是："+max);
+        
+    }
+}
+
+```
+
+![image-20240423105930047](./06JAVA的数组.assets/image-20240423105930047.png)
+
+## 数组反转
+
+定义一个临时变量用于交换
+
+```java
+package com.itheima.demo;
+
+public class Test2 {
+    public static void main(String[] args) {
+        int[] arr = {10,20,30,40,50};
+
+        //反转 i前 j后
+        for(int i = 0,j = arr.length-1; i < j ;i++, j--) {
+            int temp = arr[j];
+            arr[j] = arr[i];
+            arr[i] = temp;
+        }
+
+        for(int i = 0 ; i < arr.length; i++){
+            System.out.println(arr[i]);
+        }
+    }
+}
+```
+
+![image-20240423110259036](./06JAVA的数组.assets/image-20240423110259036.png)
+
+## 随机排名
+
+```java
+package com.itheima.demo;
+
+import javax.swing.*;
+import java.util.Random;
+import java.util.Scanner;
+
+public class Test3 {
+    public static void main(String[] args) {
+        int[] codes = new int[5];
+
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < codes.length; i++) {
+            System.out.println("请输入当前员工的工号");
+            codes[i] = sc.nextInt();
+        }
+
+        //打乱数据
+        Random r = new Random();
+        for (int i = 0; i < codes.length; i++) {
+            int index = r.nextInt(codes.length);
+            int temp = codes[index];
+            codes[index] = codes[i];
+            codes[i] = temp;
+        }
+
+        for (int i = 0; i < codes.length; i++) {
+            System.out.println(codes[i]);
+        }
+    }
+}
+```
+
+![image-20240423110808144](./06JAVA的数组.assets/image-20240423110808144.png)
+
+## 补充：debug使用
+
+断点调试工具
+
+观看程序执行的情况
+
