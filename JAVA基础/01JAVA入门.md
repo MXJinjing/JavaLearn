@@ -1,4 +1,4 @@
-# Java 介绍
+# JAVA 介绍
 
 高级编程语言
 
@@ -20,7 +20,7 @@ Oracle、Sun
 
 - java ME：小型版
 
-# Java 安装
+# JAVA安装
 
 ## JDK 
 
@@ -46,7 +46,7 @@ javac 编译工具
 
 java 执行工具
 
-# Java入门程序
+# JAVA入门程序
 
 
 
@@ -100,7 +100,7 @@ main是静态类
 
 java11开始支持java直接运行源代码
 
-# Java程序执行原理
+# JAVA程序执行原理
 
 机器指令 01
 
@@ -130,7 +130,7 @@ JDK：Java开发工具包
 
 开发一次，各平台运行
 
-# Java_home，Path环境变量
+# JAVA_HOME，Path环境变量
 
 操作系统的环境变量
 
