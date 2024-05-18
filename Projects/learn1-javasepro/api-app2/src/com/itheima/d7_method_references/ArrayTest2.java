@@ -1,6 +1,7 @@
-package com.itheima.d5_arrays;
+package com.itheima.d7_method_references;
 
-import java.lang.reflect.Array;
+import com.itheima.d5_arrays.Student;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -17,22 +18,16 @@ public class ArrayTest2 {
         System.out.println(Arrays.toString(students));
 
         // 2.重载的sort(arr,Comparator);
-        Arrays.sort(students, new Comparator<Student>() {
+//        Arrays.sort(students, (o1,o2)-> Double.compare(o1.getHeight(),o2.getHeight()));
+//        Arrays.sort(students, (o1,o2)-> CompareByData.compareByAge(o1,o2));
+        Arrays.sort(students, CompareByData::compareByAge);
 
-            @Override
-            public int compare(Student o1, Student o2) {
-                // 约定1：左边大于右边，返回正整数
-                // 约定2: 左边小于右边，返回负整数
-                // 约定3： 等于返回0
-//                if(o1.getHeight() > o2.getHeight()){
-//                    return 1;
-//                }else if(o1.getHeight() < o2.getHeight()){
-//                    return -1;
-//                }else
-//                return 0;
-                return Double.compare(o1.getHeight(),o2.getHeight());
-            }
-        });
+
+        //降序
+        CompareByData compare = new CompareByData();
+//        Arrays.sort(students, ((o1, o2) -> compare.compareByAgeDsc(o1,o2)));
+        Arrays.sort(students, compare::compareByAgeDsc);
+
 
         System.out.println(Arrays.toString(students));
     }

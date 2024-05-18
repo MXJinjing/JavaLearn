@@ -12,12 +12,8 @@ public class BookDaoImpl1 implements BookDao {
         System.out.println("book dao save..."+connectionNum+databaseName);
     }
 
-
-    public void setConnectionNum(int connectionNum) {
+    public BookDaoImpl1(int connectionNum, String databaseName){
         this.connectionNum = connectionNum;
-    }
-
-    public void setDatabaseName(String databaseName) {
         this.databaseName = databaseName;
     }
 }

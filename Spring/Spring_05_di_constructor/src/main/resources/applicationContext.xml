@@ -9,8 +9,12 @@
 <!--    id属性标识bean起名字-->
 <!--    class属性表示给bean定义类型-->
     <bean id="bookDao" class="com.itheima.dao.impl.BookDaoImpl1">
-        <property name="connectionNum" value="10"/>
-        <property name="databaseName" value="mySQL"/>
+<!--        <constructor-arg name="connectionNum" value="10"/>-->
+<!--        <constructor-arg name="databaseName" value="mySQL"/>-->
+<!--        <constructor-arg type="int" value="10"/>-->
+<!--        <constructor-arg type="java.lang.String" value="mySQL"/>-->
+        <constructor-arg index="0" value="10"/>
+        <constructor-arg index="1" value="mySQL"/>
     </bean>
 <!--        init-method="init"-->
 <!--        destroy-method="destroy"/>-->
@@ -20,7 +24,7 @@
         <!-- property标签表示配置当前bean的属性
             name属性表示配置哪一个具体的属性
             ref属性表示参考哪一个bean-->
-        <property name="bookDao" ref="bookDao"/>
-        <property name="userDao" ref="userDao"/>
+        <constructor-arg name="bookDao" ref="bookDao"/>
+        <constructor-arg name="userDao" ref="userDao"/>
     </bean>
 </beans>
