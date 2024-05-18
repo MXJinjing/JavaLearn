@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    1.导入Spring的坐标Spring-context，版本5.2.10.RELEASE-->
+
+<!--    2. 配置Bean-->
+<!--    bean标签标示配置bean-->
+<!--    id属性标识bean起名字-->
+<!--    class属性表示给bean定义类型-->
+    <bean id="bookDao" class="com.itheima.dao.impl.BookDaoImpl1">
+<!--        <constructor-arg name="connectionNum" value="10"/>-->
+<!--        <constructor-arg name="databaseName" value="mySQL"/>-->
+<!--        <constructor-arg type="int" value="10"/>-->
+<!--        <constructor-arg type="java.lang.String" value="mySQL"/>-->
+        <constructor-arg index="0" value="10"/>
+        <constructor-arg index="1" value="mySQL"/>
+    </bean>
+<!--        init-method="init"-->
+<!--        destroy-method="destroy"/>-->
+    <bean id="userDao" class="com.itheima.dao.impl.UserDaoImpl1"/>
+    <bean id="bookService" name="service service2 bookEbi"  class="com.itheima.service.impl.BookServiceImpl">
+        <!-- 7. 配置server与dao关系-->
+        <!-- property标签表示配置当前bean的属性
+            name属性表示配置哪一个具体的属性
+            ref属性表示参考哪一个bean-->
+        <constructor-arg name="bookDao" ref="bookDao"/>
+        <constructor-arg name="userDao" ref="userDao"/>
+    </bean>
+</beans>
