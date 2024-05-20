@@ -24,7 +24,7 @@ DI：依赖注入
 
 ![image-20240518231437736](./02SPRING核心概念.assets/image-20240518231437736.png)
 
-##  Ioc\DI 入门案例
+##  IoC\DI 入门案例
 
 ![image-20240518234604367](./02SPRING核心概念.assets/image-20240518234604367.png)
 

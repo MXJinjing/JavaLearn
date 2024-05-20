@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    1.导入Spring的坐标Spring-context，版本5.2.10.RELEASE-->
+
+<!--    2. 配置Bean-->
+<!--    bean标签标示配置bean-->
+<!--    id属性标识bean起名字-->
+<!--    class属性表示给bean定义类型-->
+    <bean id="bookDao" class="com.itheima.dao.impl.BookDaoImpl1">
+        <property name="array">
+            <array>
+                <value>100</value>
+                <value>200</value>
+                <value>300</value>
+            </array>
+        </property>
+
+        <property name="list">
+            <list>
+                <value>itcast</value>
+                <value>itheima</value>
+                <value>boxuegu</value>
+            </list>
+        </property>
+
+        <property name="set">
+            <set>
+                <value>itcast</value>
+                <value>itheima</value>
+                <value>boxuegu</value>
+                <value>boxuegu</value>
+            </set>
+        </property>
+
+        <property name="map">
+            <map>
+                <entry key="country" value="china"/>
+                <entry key="province" value="gansu"/>
+                <entry key="city" value="lanzhou"/>
+            </map>
+        </property>
+
+       <property name="properties">
+           <props>
+               <prop key="country">china</prop>
+               <prop key="province">gansu</prop>
+               <prop key="city">lanzhou</prop>
+           </props>
+       </property>
+    </bean>
+
+
+    <bean id="bookService" class="com.itheima.service.impl.BookServiceImpl" autowire="byName"/>
+
+</beans>
